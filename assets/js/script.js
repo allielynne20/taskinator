@@ -1,4 +1,5 @@
 var taskIdCounter = 0;
+var pageContentEl = document.querySelector("#page-content");
 var formEl = document.querySelector("#task-form");
 //var buttonEl = document.querySelector("#save-task");
 //console.log(buttonEl);
@@ -110,7 +111,14 @@ var createTaskActions = function (taskId) {
         statusSelectEl.appendChild(statusOptionEl);
     }
 
+    return actionContainerEl;
 
 };
 
 formEl.addEventListener("submit", taskFormHandler);
+
+var taskButtonHandler = function(event) {
+    console.log(event.target);
+}
+
+pageContentEl.addEventListener("click", taskButtonHandler);
